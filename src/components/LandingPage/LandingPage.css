@@ -1,0 +1,63 @@
+.dashboard-header {
+  min-height: 100vh;
+}
+
+.landing-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10rem;
+  font-family: monospace;
+  flex-wrap: nowrap;
+
+  background-color: rgb(8, 86, 86);
+  color: hsl(0, 0%, 100%);
+
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.landing-column.dark {
+  background-color: hsl(0, 0%, 17%);
+  color: hsl(0, 0%, 100%);
+}
+
+.landing-column h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+.landing-column span {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(49, 79%, 58%);
+}
+
+.landing-column span:nth-of-type(2) {
+  color: #fff;
+}
+
+.dark-mode {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+button {
+  height: 50px;
+  width: 50px;
+  color: black;
+  background-color: hsl(49, 79%, 58%);
+  border-radius: 5px 0px 0px 5px !important;
+}
+
+button:hover {
+  background-color: hsl(49, 79%, 68%);
+}
+
+button:active {
+  background-color: hsl(49, 79%, 78%);
+}

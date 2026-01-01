@@ -1,0 +1,91 @@
+.header {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.card {
+  margin: 20px;
+}
+
+.card h4 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+form .form-group {
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+}
+
+table {
+  margin-top: 20px;
+}
+
+table th {
+  font-weight: 700;
+  text-align: left;
+}
+
+table td,
+table th {
+  vertical-align: middle;
+}
+
+.table td[colspan] {
+  padding: 20px;
+  color: #6c757d;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-body {
+  justify-content: space-between;
+}
+
+.filter-section label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.filter-section select,
+.filter-section input[type="date"] {
+  height: 40px;
+  font-size: 14px;
+}
+
+.filter-section button {
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-section .apply-btn {
+  margin-top: 30px;
+}
+
+.apply-btn {
+  margin-top: 5px;
+}
+
+.search-bar {
+  width: 100%;
+}
+.search-input {
+  height: 40px;
+  font-size: 14px;
+}
+
+.search-button {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100px;
+  border-radius: 0;
+  height: 50px;
+  font-size: 15px;
+}

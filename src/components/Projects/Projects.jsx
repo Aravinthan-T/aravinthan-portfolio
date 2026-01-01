@@ -3,6 +3,7 @@ import { Card, Col, Row } from "react-bootstrap";
 import { ThemeContext } from "../../App";
 import { Link } from "react-router-dom";
 import "./Projects.css";
+import LastCommitDate from "../../LastCommitDate";
 
 const projects = [
   {
@@ -31,6 +32,9 @@ const Projects = () => {
   return (
     <section className={`projects-section ${darkMode ? "dark" : ""}`}>
       <h2 className="projects-title">My Projects</h2>
+      <div>
+        <LastCommitDate />
+      </div>
       <Row className="g-5">
         {projects.map((project) => (
           <Col key={project.id} xs={12} sm={6} md={4} lg={4}>

@@ -1,6 +1,6 @@
 import React, { createContext, useState } from "react";
-import Calculator from "./Components/Calculator/Calculator";
-import StopWatch from "./Components/StopWatch/StopWatch";
+import Calculator from "./components/Calculator/Calculator";
+import StopWatch from "./components/StopWatch/StopWatch";
 import CamsOnline from "./components/CamsOnline/CamsOnline";
 import LandingPage from "./components/LandingPage/LandingPage";
 

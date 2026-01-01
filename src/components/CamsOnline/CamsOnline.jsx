@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Button, Card, Col, Form, Row, Table } from "react-bootstrap";
 import { data } from "../data";
 import "../../styles/CamsOnline.css";
@@ -15,7 +15,8 @@ const CamsOnline = () => {
 
   const todayStr = new Date().toISOString().split("T")[0];
 
-  const applyFilter = () => {
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const applyFilter = useCallback(() => {
     const today = new Date();
     let fromDate;
 
@@ -57,11 +58,11 @@ const CamsOnline = () => {
     });
 
     setFilteredData(result);
-  };
+  });
 
   useEffect(() => {
     applyFilter();
-  }, [filter, appliedSearch]);
+  }, [filter, appliedSearch, applyFilter]);
 
   return (
     <Card className="p-3">

@@ -12,6 +12,8 @@
   border-radius: 15px;
   max-width: 500px;
   overflow: hidden;
+  justify-content: center;
+  align-items: center;
 }
 #display {
   width: 100%;
@@ -46,12 +48,12 @@ button:hover {
 button:active {
   background-color: hsl(0, 0%, 50%);
 }
-.operator-btn{
-    background-color: hsl(38, 92%, 50%);
+.operator-btn {
+  background-color: hsl(38, 92%, 50%);
 }
-.operator-btn:hover{
-    background-color: hsl(38, 92%, 60%);
+.operator-btn:hover {
+  background-color: hsl(38, 92%, 60%);
 }
-.operator-btn:active{
-    background-color: hsl(38, 92%, 70%);
+.operator-btn:active {
+  background-color: hsl(38, 92%, 70%);
 }

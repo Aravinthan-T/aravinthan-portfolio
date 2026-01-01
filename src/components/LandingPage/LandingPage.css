@@ -46,7 +46,7 @@
   z-index: 1000;
 }
 
-button {
+.dark-mode button {
   height: 50px;
   width: 50px;
   color: black;

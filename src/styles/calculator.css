@@ -6,6 +6,10 @@
   height: 100vh;
   background-color: hsl(208, 100%, 85%);
 } */
+.calculator-page {
+  background-color: rgb(244, 235, 235);
+  height: 100vh;
+}
 #calculator {
   font-family: monospace, Arial, Helvetica, sans-serif;
   background-color: hsl(0, 0%, 15%);
@@ -30,7 +34,7 @@
   gap: 10px;
   padding: 25px;
 }
-button {
+#keys button {
   width: 100px;
   height: 100px;
   border-radius: 50px;
@@ -42,18 +46,18 @@ button {
   font-family: monospace;
   cursor: pointer;
 }
-button:hover {
+#keys button:hover {
   background-color: hsl(0, 0%, 40%);
 }
-button:active {
+#keys button:active {
   background-color: hsl(0, 0%, 50%);
 }
-.operator-btn {
+#keys .operator-btn {
   background-color: hsl(38, 92%, 50%);
 }
-.operator-btn:hover {
+#keys .operator-btn:hover {
   background-color: hsl(38, 92%, 60%);
 }
-.operator-btn:active {
+#keys .operator-btn:active {
   background-color: hsl(38, 92%, 70%);
 }

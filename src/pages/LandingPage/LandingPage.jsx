@@ -4,7 +4,7 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { ThemeContext } from "../../App";
 import WbSunnyTwoToneIcon from "@mui/icons-material/WbSunnyTwoTone";
 import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
-import Projects from "../Projects/Projects";
+import Projects from "../../components/Projects/Projects";
 
 const LandingPage = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);

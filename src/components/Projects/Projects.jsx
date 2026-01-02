@@ -24,6 +24,13 @@ const projects = [
     description: "Dashboard showing online cams with filters and search",
     route: "/cams-online",
   },
+  {
+    id: 4,
+    title: "Cams Online Using Ag-Grid",
+    description:
+      "Dashboard showing online cams with filters and search using Ag-Grid",
+    route: "/cams-online-ag-grid",
+  },
 ];
 
 const Projects = () => {

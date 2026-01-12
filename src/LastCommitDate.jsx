@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 const LastCommitDate = () => {
   const [lastCommitDate, setLastCommitDate] = useState(null);
+  const [lastCommitMsg, setLastCommitMsg] = useState("");
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -17,8 +18,10 @@ const LastCommitDate = () => {
 
         if (data.length > 0) {
           setLastCommitDate(new Date(data[0].commit.author.date));
+          setLastCommitMsg(data[0]?.commit.message);
         } else {
           setLastCommitDate("No commits yet");
+          setLastCommitMsg("Commit message not found");
         }
       } catch (err) {
         setError(err, "Unable to fetch commit date");
@@ -29,17 +32,26 @@ const LastCommitDate = () => {
   }, []);
 
   if (error) return <p>{error}</p>;
-  if (!lastCommitDate) return <p>Loading...</p>;
+  if (!lastCommitDate && !lastCommitMsg) return <p>Loading...</p>;
 
   return (
-    <p>
-      Last commit on:{" "}
-      <strong>
-        {typeof lastCommitDate === "string"
-          ? lastCommitDate
-          : lastCommitDate.toLocaleDateString()}
-      </strong>
-    </p>
+    <div>
+      <div>
+        <p>
+          Last commit on:{" "}
+          <strong>
+            {typeof lastCommitDate === "string"
+              ? lastCommitDate
+              : lastCommitDate.toLocaleDateString()}
+          </strong>
+        </p>
+      </div>
+      <div>
+        <p>
+          Last commit message: <strong>{lastCommitMsg}</strong>
+        </p>
+      </div>
+    </div>
   );
 };
 

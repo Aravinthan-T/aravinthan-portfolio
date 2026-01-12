@@ -4,10 +4,20 @@ import { Button, Card, Col, Row } from "react-bootstrap";
 import { ThemeContext } from "../../App";
 import WbSunnyTwoToneIcon from "@mui/icons-material/WbSunnyTwoTone";
 import DarkModeTwoToneIcon from "@mui/icons-material/DarkModeTwoTone";
+import ArticleIcon from "@mui/icons-material/Article";
 import Projects from "../../components/Projects/Projects";
 
 const LandingPage = () => {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
+
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = "./Aravinthan-Thangarasu-Frontend-Engineer.pdf";
+    link.download = "Aravinthan_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <>
@@ -24,6 +34,16 @@ const LandingPage = () => {
           <span>
             I build responsive, user-friendly web applications using React
           </span>
+          <div className="mt-3">
+            <Button
+              variant="secondary"
+              className="resume-button"
+              onClick={downloadResume}
+            >
+              Download Resume
+              <ArticleIcon />
+            </Button>
+          </div>
         </div>
 
         <div>

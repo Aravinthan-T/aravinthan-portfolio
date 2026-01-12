@@ -37,6 +37,7 @@
 
 .landing-column span:nth-of-type(2) {
   color: #fff;
+  text-align: center;
 }
 
 .dark-mode {
@@ -61,4 +62,8 @@ button:hover {
 
 button:active {
   background-color: hsl(49, 79%, 78%);
+}
+
+.resume-button {
+  background-color: grey;
 }

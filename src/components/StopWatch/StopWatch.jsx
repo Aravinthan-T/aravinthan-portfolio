@@ -46,9 +46,9 @@ export default function StopWatch() {
     return `${hours}:${minutes}:${seconds}:${milliSeconds}`;
   }
   return (
-    <div className="stopwatch">
+    <div className="stopwatch container">
       <div className="display">{formatTime()}</div>
-      <div className="controls">
+      <div className="controls d-flex gap-2">
         <button
           onClick={handleButton}
           className={isRunning ? "stop-button" : "start-button"}

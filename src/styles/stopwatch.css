@@ -6,6 +6,8 @@
 .stopwatch {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  margin: 5rem;
   align-items: center;
   border: 5px solid;
   border-radius: 50px;

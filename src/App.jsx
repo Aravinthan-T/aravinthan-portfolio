@@ -1,11 +1,10 @@
 import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import StopWatch from "./components/StopWatch/StopWatch";
-import CamsOnline from "./components/CamsOnline/CamsOnline";
 import LandingPage from "./pages/LandingPage/LandingPage";
 import CalculatorPage from "./pages/Calculator/CalculatorPage";
-import CamsOnlinePage from "./pages/CamsOnlineAgGrid/CamsOnlinePage";
+import CamsOnlinePage from "./pages/CamsOnline/CamsOnlinePage";
+import StopwatchPage from "./pages/Stopwatch/StopwatchPage";
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const ThemeContext = createContext();
@@ -19,9 +18,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/calculator" element={<CalculatorPage />} />
-          <Route path="/stopwatch" element={<StopWatch />} />
-          <Route path="/cams-online" element={<CamsOnline />} />
-          <Route path="/cams-online-ag-grid" element={<CamsOnlinePage />} />
+          <Route path="/stopwatch" element={<StopwatchPage />} />
+          <Route path="/cams-online" element={<CamsOnlinePage />} />
         </Routes>
       </Router>
     </ThemeContext.Provider>

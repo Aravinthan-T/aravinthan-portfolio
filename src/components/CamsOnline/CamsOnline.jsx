@@ -1,13 +1,31 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useMemo, useState } from "react";
 import { Button, Card, Col, Form, Row, Table } from "react-bootstrap";
 import { data } from "../data";
 import "../../styles/CamsOnline.css";
+
+const getFromDate = (filter) => {
+  const today = new Date();
+  const date = new Date(today);
+
+  switch (filter) {
+    case "1_week":
+      date.setDate(today.getDate() - 7);
+      return date;
+    case "1_month":
+      date.setMonth(today.getMonth() - 1);
+      return date;
+    case "3_month":
+      date.setMonth(today.getMonth() - 3);
+      return date;
+    default:
+      return null;
+  }
+};
 
 const CamsOnline = () => {
   const [filter, setFilter] = useState("1_week");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
   const [dateError, setDateError] = useState("");
 
   const [searchTerm, setSearchTerm] = useState("");
@@ -15,25 +33,14 @@ const CamsOnline = () => {
 
   const todayStr = new Date().toISOString().split("T")[0];
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const applyFilter = useCallback(() => {
+  const filteredData = useMemo(() => {
     const today = new Date();
-    let fromDate;
+    const fromDate = getFromDate(filter);
 
-    if (filter === "1_week") {
-      fromDate = new Date();
-      fromDate.setDate(today.getDate() - 7);
-    } else if (filter === "1_month") {
-      fromDate = new Date();
-      fromDate.setMonth(today.getMonth() - 1);
-    } else if (filter === "3_month") {
-      fromDate = new Date();
-      fromDate.setMonth(today.getMonth() - 3);
-    }
-
-    const result = data.filter((item) => {
+    return data.filter((item) => {
       const itemDate = new Date(item.date);
 
+      // Date filter
       if (filter === "custom") {
         if (!startDate || !endDate) return false;
         if (itemDate < new Date(startDate) || itemDate > new Date(endDate)) {
@@ -45,6 +52,7 @@ const CamsOnline = () => {
         }
       }
 
+      // Search filter
       if (appliedSearch) {
         const search = appliedSearch.toLowerCase();
         return (
@@ -56,18 +64,13 @@ const CamsOnline = () => {
 
       return true;
     });
-
-    setFilteredData(result);
-  });
-
-  useEffect(() => {
-    applyFilter();
-  }, [filter, appliedSearch, applyFilter]);
+  }, [filter, startDate, endDate, appliedSearch]);
 
   return (
     <Card className="p-3">
       <h4 className="mb-3">Mutual Fund Transactions</h4>
 
+      {/* Filter Section */}
       <Form className="mb-3">
         <Row className="align-items-end">
           <Col md={3}>
@@ -145,7 +148,6 @@ const CamsOnline = () => {
 
               <Col md={2}>
                 <Button
-                  onClick={applyFilter}
                   disabled={!!dateError || !startDate || !endDate}
                   className="search-button"
                 >
@@ -156,7 +158,7 @@ const CamsOnline = () => {
               {dateError && (
                 <Row className="mt-2">
                   <Col>
-                    <div style={{ color: "red", fontSize: "14px" }}>
+                    <div style={{ color: "red", fontSize: 14 }}>
                       {dateError}
                     </div>
                   </Col>
@@ -167,6 +169,7 @@ const CamsOnline = () => {
         </Row>
       </Form>
 
+      {/* Search Section */}
       <Row className="mb-3">
         <Col md={10}>
           <Form.Control
@@ -188,6 +191,7 @@ const CamsOnline = () => {
         </Col>
       </Row>
 
+      {/* Table */}
       <Table bordered hover responsive>
         <thead>
           <tr>
@@ -198,7 +202,7 @@ const CamsOnline = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.length > 0 ? (
+          {filteredData.length ? (
             filteredData.map((item, index) => (
               <tr key={index}>
                 <td>{item.provider}</td>

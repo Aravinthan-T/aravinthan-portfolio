@@ -12,7 +12,7 @@ const LandingPage = () => {
 
   const downloadResume = () => {
     const link = document.createElement("a");
-    link.href = "./Aravinthan-Thangarasu-Frontend-Engineer.pdf";
+    link.href = "./Aravinthan-Thangarasu-Resume.pdf";
     link.download = "Aravinthan_Resume.pdf";
     document.body.appendChild(link);
     link.click();

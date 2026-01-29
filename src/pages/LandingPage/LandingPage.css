@@ -15,7 +15,9 @@
   background-color: rgb(8, 86, 86);
   color: hsl(0, 0%, 100%);
 
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .landing-column.dark {
@@ -67,3 +69,13 @@ button:active {
 .resume-button {
   background-color: grey;
 }
+
+.logout-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+

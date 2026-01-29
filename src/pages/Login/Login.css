@@ -1,0 +1,37 @@
+.login-page {
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.login-card {
+  max-width: 380px;
+  margin: auto;
+  border-radius: 12px;
+  background: white;
+  transition: transform 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+}
+
+.login-card h2 {
+  font-weight: 700;
+  color: #333;
+}
+
+.google-login-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.google-login-btn button {
+  padding: 0 !important;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.text-muted {
+  color: #888 !important;
+}

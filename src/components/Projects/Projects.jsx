@@ -24,6 +24,12 @@ const projects = [
     description: "Dashboard showing online cams with filters and search",
     route: "/cams-online",
   },
+    {
+    id: 4,
+    title: "Exercise",
+    description: "My personal space and i will executes my personal exercise",
+    route: "/exercise",
+  },
 ];
 const Projects = () => {
   const { darkMode } = useContext(ThemeContext);

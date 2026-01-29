@@ -31,7 +31,7 @@ export default function Login() {
                   );
 
                   login(Array.from(credentialResponse.credential));
-                  navigate("/landingpage");
+                  navigate("/");
                 }}
                 onError={() => console.log("Login Failed")}
               />
